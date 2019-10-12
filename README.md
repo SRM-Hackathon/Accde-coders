@@ -27,3 +27,5 @@ void main(){
     )
   );
 }
+
+Reference for MPU6050final.ino: https://github.com/VRomanov89/EEEnthusiast/blob/master/MPU-6050%20Implementation/MPU6050_Implementation/MPU6050_Implementation.ino
