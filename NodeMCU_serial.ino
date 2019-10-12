@@ -1,7 +1,3 @@
-// Robo India Tutorial 
-// Digital Input and Output on LED 
-// Hardware: NodeMCU
-
 const int ARD1 = D2;
 const int LED = D7;
 const int ARD2 = D8;
@@ -20,8 +16,6 @@ void loop() {
   if (ARDstate1 == LOW)
     {
       digitalWrite(D7, LOW);
-      //Serial.print("sensor: ");
-      //Serial.println(digitalRead(D7));
     }
     else
     {
