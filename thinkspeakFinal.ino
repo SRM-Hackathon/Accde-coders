@@ -17,7 +17,7 @@ WiFiClient client;
   Serial.print("Connecting to ");
   Serial.print(ssid);
 
-  WiFi.begin(ssid,password); // checking WiFi connection
+  WiFi.begin(ssid,password);                 // checking WiFi connection
   while(WiFi.status()!=WL_CONNECTED){ 
     delay(500);
     Serial.println(".");
@@ -25,7 +25,7 @@ WiFiClient client;
     Serial.println("");
     Serial.println("WIFI CONNECTED");
     Serial.println("IP address= ");
-    Serial.println(WiFi.localIP()); //IP Address of NodeMcu
+    Serial.println(WiFi.localIP());           //IP Address of NodeMcu
     ThingSpeak.begin(client);
 }
 
@@ -35,9 +35,10 @@ void loop(){
      String postStr = ApiKey;
   
  // int response=digitalRead(D7); 
- ThingSpeak.writeField(883129,1,response1,"EAGVOQMP45F3HRW0");
-  ThingSpeak.writeField(883129,2,response2,"EAGVOQMP45F3HRW0");
- if ((response1 == HIGH)||(response2 == HIGH)){
+ ThingSpeak.writeField(883129,1,response1,"EAGVOQMP45F3HRW0");  // For graph1- Signal from crash sensor.
+ ThingSpeak.writeField(883129,2,response2,"EAGVOQMP45F3HRW0");  // For graph2- Signal from Accelerometer sensor
+ if ((response1 == HIGH)||(response2 == HIGH))  // condition for detecting an accident.
+ {
     Serial.println("CRASH");
     delay(500);
   }
